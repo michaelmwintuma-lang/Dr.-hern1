@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
-import Hero from './components/Hero/Hero';
-import Stats from './components/Stats/Stats';
-import MissionVision from './components/MissionVision/MissionVision';
-import Founder from './components/Founder/Founder';
-import Programs from './components/Programs/Programs';
-import CoreValues from './components/CoreValues/CoreValues';
-import DonateVolunteer from './components/Forms/DonateVolunteer';
 import Footer from './components/Footer/Footer';
+
+// Pages
+import Home from './pages/Home';
+import OurWork from './pages/OurWork';
+import AboutUs from './pages/AboutUs';
+import Contact from './pages/Contact';
+import Donate from './pages/Donate';
 
 function App() {
   const [showBackToTop, setShowBackToTop] = useState(false);
@@ -30,17 +31,17 @@ function App() {
   };
 
   return (
-    <>
+    <Router>
       <Navbar />
-      <main>
-        <Hero />
-        <Stats />
-        <MissionVision />
-        <Founder />
-        <Programs />
-        <CoreValues />
-        <DonateVolunteer />
-      </main>
+      
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/our-work" element={<OurWork />} />
+        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/donate" element={<Donate />} />
+      </Routes>
+      
       <Footer />
 
       {/* WhatsApp Button */}
@@ -60,7 +61,7 @@ function App() {
       >
         ↑
       </button>
-    </>
+    </Router>
   );
 }
 

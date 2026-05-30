@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -16,23 +17,10 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const smoothScrollTo = (e, targetId) => {
-    e.preventDefault();
+  const closeMenus = () => {
     setIsMobileMenuOpen(false);
     setIsMegaMenuOpen(false);
-    
-    if (targetId === '#') return;
-    
-    const target = document.querySelector(targetId);
-    if (target) {
-      const navbarOffset = document.getElementById('navbar')?.offsetHeight || 72;
-      const targetY = target.getBoundingClientRect().top + window.scrollY - (navbarOffset + 24);
-      
-      window.scrollTo({
-        top: targetY,
-        behavior: 'smooth'
-      });
-    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleMouseEnter = () => {
@@ -41,7 +29,6 @@ const Navbar = () => {
   };
 
   const handleMouseLeave = () => {
-    // 250ms buffer prevents the "hover trap" when moving diagonally 
     timeoutRef.current = setTimeout(() => {
       setIsMegaMenuOpen(false);
     }, 250);
@@ -52,15 +39,15 @@ const Navbar = () => {
       <div className="container nav-container">
         
         {/* Logo */}
-        <a href="#home" onClick={(e) => smoothScrollTo(e, '#home')} className="logo-container">
+        <Link to="/" onClick={closeMenus} className="logo-container">
           <img src="images/logo.jpg" alt="Igniting Girls of Africa logo" width="120" height="32"
             onError={(e) => { e.target.outerHTML = "<div class='img-placeholder' style='width:120px; height:32px; border-radius:4px; font-size:12px;'>LOGO</div>"; }} />
           <span className="logo-text">IGNITING GIRLS OF AFRICA</span>
-        </a>
+        </Link>
 
         {/* Desktop Links */}
         <ul className="nav-links">
-          <li><a href="#home" onClick={(e) => smoothScrollTo(e, '#home')}>Home</a></li>
+          <li><Link to="/" onClick={closeMenus}>Home</Link></li>
           
           {/* Mega Menu Trigger */}
           <li 
@@ -70,12 +57,12 @@ const Navbar = () => {
             onFocus={handleMouseEnter}
             onBlur={handleMouseLeave}
           >
-            <a href="#programs" aria-haspopup="true" aria-expanded={isMegaMenuOpen} onClick={(e) => smoothScrollTo(e, '#programs')}>
+            <Link to="/our-work" aria-haspopup="true" aria-expanded={isMegaMenuOpen} onClick={closeMenus}>
               Our Work
               <svg className={`chevron ${isMegaMenuOpen ? 'open' : ''}`} width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
-            </a>
+            </Link>
             
             {/* Mega Menu Drop Panel */}
             <div className={`mega-menu-panel ${isMegaMenuOpen ? 'active' : ''}`}>
@@ -85,15 +72,15 @@ const Navbar = () => {
                 <div className="mega-col">
                   <h4 className="mega-title">Our Programs</h4>
                   <ul className="mega-link-list">
-                    <li><a href="#programs" onClick={(e) => smoothScrollTo(e, '#programs')}>One-on-One Mentorship</a></li>
-                    <li><a href="#programs" onClick={(e) => smoothScrollTo(e, '#programs')}>Leadership Skills</a></li>
-                    <li><a href="#programs" onClick={(e) => smoothScrollTo(e, '#programs')}>Entrepreneurship</a></li>
-                    <li><a href="#programs" onClick={(e) => smoothScrollTo(e, '#programs')}>Financial Literacy</a></li>
-                    <li><a href="#programs" onClick={(e) => smoothScrollTo(e, '#programs')}>Confidence Building & Outreach</a></li>
-                    <li><a href="#programs" onClick={(e) => smoothScrollTo(e, '#programs')}>Business Development</a></li>
-                    <li><a href="#programs" onClick={(e) => smoothScrollTo(e, '#programs')}>Mental Well-Being</a></li>
-                    <li><a href="#programs" onClick={(e) => smoothScrollTo(e, '#programs')}>Self Esteem Building</a></li>
-                    <li><a href="#programs" onClick={(e) => smoothScrollTo(e, '#programs')}>Business Acumen</a></li>
+                    <li><Link to="/our-work" onClick={closeMenus}>One-on-One Mentorship</Link></li>
+                    <li><Link to="/our-work" onClick={closeMenus}>Leadership Skills</Link></li>
+                    <li><Link to="/our-work" onClick={closeMenus}>Entrepreneurship</Link></li>
+                    <li><Link to="/our-work" onClick={closeMenus}>Financial Literacy</Link></li>
+                    <li><Link to="/our-work" onClick={closeMenus}>Confidence Building & Outreach</Link></li>
+                    <li><Link to="/our-work" onClick={closeMenus}>Business Development</Link></li>
+                    <li><Link to="/our-work" onClick={closeMenus}>Mental Well-Being</Link></li>
+                    <li><Link to="/our-work" onClick={closeMenus}>Self Esteem Building</Link></li>
+                    <li><Link to="/our-work" onClick={closeMenus}>Business Acumen</Link></li>
                   </ul>
                 </div>
 
@@ -101,10 +88,10 @@ const Navbar = () => {
                 <div className="mega-col">
                   <h4 className="mega-title">Get Involved</h4>
                   <ul className="mega-link-list">
-                    <li><a href="#volunteer" onClick={(e) => smoothScrollTo(e, '#volunteer')}>Become a Mentor</a></li>
-                    <li><a href="#volunteer" onClick={(e) => smoothScrollTo(e, '#volunteer')}>Corporate Partnerships</a></li>
-                    <li><a href="#volunteer" onClick={(e) => smoothScrollTo(e, '#volunteer')}>Volunteer Opportunities</a></li>
-                    <li><a href="#volunteer" onClick={(e) => smoothScrollTo(e, '#volunteer')}>Host a Fundraiser</a></li>
+                    <li><Link to="/contact" onClick={closeMenus}>Become a Mentor</Link></li>
+                    <li><Link to="/contact" onClick={closeMenus}>Corporate Partnerships</Link></li>
+                    <li><Link to="/contact" onClick={closeMenus}>Volunteer Opportunities</Link></li>
+                    <li><Link to="/donate" onClick={closeMenus}>Host a Fundraiser</Link></li>
                   </ul>
                 </div>
 
@@ -112,12 +99,12 @@ const Navbar = () => {
             </div>
           </li>
           
-          <li><a href="#about" onClick={(e) => smoothScrollTo(e, '#about')}>About Us</a></li>
-          <li><a href="#footer" onClick={(e) => smoothScrollTo(e, '#footer')}>Contact</a></li>
+          <li><Link to="/about-us" onClick={closeMenus}>About Us</Link></li>
+          <li><Link to="/contact" onClick={closeMenus}>Contact</Link></li>
         </ul>
 
         {/* Global Donate CTA */}
-        <a href="#donate" className="nav-donate" onClick={(e) => smoothScrollTo(e, '#donate')}>Donate</a>
+        <Link to="/donate" className="nav-donate" onClick={closeMenus}>Donate</Link>
 
         {/* Mobile Menu Trigger */}
         <button type="button" className="mobile-menu-btn" aria-label="Open mobile menu" onClick={() => setIsMobileMenuOpen(true)}>☰</button>
@@ -127,11 +114,11 @@ const Navbar = () => {
       <div className={`mobile-menu-panel ${isMobileMenuOpen ? 'open' : ''}`}>
         <button type="button" className="mobile-close-btn" style={{ display: isMobileMenuOpen ? 'block' : 'none' }} aria-label="Close mobile menu" onClick={() => setIsMobileMenuOpen(false)}>✕</button>
         <div className="mobile-menu-content">
-          <a href="#home" onClick={(e) => smoothScrollTo(e, '#home')}>Home</a>
-          <a href="#programs" onClick={(e) => smoothScrollTo(e, '#programs')}>Our Work</a>
-          <a href="#about" onClick={(e) => smoothScrollTo(e, '#about')}>About Us</a>
-          <a href="#footer" onClick={(e) => smoothScrollTo(e, '#footer')}>Contact</a>
-          <a href="#donate" style={{ color: 'var(--color-primary)', fontWeight: 600 }} onClick={(e) => smoothScrollTo(e, '#donate')}>Donate Now</a>
+          <Link to="/" onClick={closeMenus}>Home</Link>
+          <Link to="/our-work" onClick={closeMenus}>Our Work</Link>
+          <Link to="/about-us" onClick={closeMenus}>About Us</Link>
+          <Link to="/contact" onClick={closeMenus}>Contact</Link>
+          <Link to="/donate" style={{ color: 'var(--color-primary)', fontWeight: 600 }} onClick={closeMenus}>Donate Now</Link>
         </div>
       </div>
     </nav>
