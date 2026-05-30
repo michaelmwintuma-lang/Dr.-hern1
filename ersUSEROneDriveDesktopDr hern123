@@ -1,0 +1,35 @@
+[33mcommit 5c9a942394e81be723f65ae690fa2bb894712c00[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: USER <user@example.com>
+Date:   Sat May 30 14:01:46 2026 +0000
+
+    code refactory
+
+[33mcommit d87a48d356f2f7c52d2728cdc464e829bf257886[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: USER <user@example.com>
+Date:   Sat May 30 09:48:38 2026 +0000
+
+    Move React app out of subdirectory to fix Vercel deployment
+
+[33mcommit ed303f832e34a951c3abe3998379128bd396f867[m
+Author: USER <user@example.com>
+Date:   Sat May 30 09:26:36 2026 +0000
+
+    initial commit
+
+[33mcommit 97135ed99a2973eb6641972275234ea8fb1c63c9[m
+Author: USER <user@example.com>
+Date:   Sat May 30 07:02:25 2026 +0000
+
+    Fix: Convert dr-hern from submodule to regular tracked files
+
+[33mcommit d6ff92246d9f16fc2b0d1c5970a464ed7b8182d8[m
+Author: USER <user@example.com>
+Date:   Sat May 30 06:12:10 2026 +0000
+
+    first commit
+
+[33mcommit 9386c2fe9de56279bfe0b8ddc973babcbb723b56[m
+Author: USER <user@example.com>
+Date:   Sat May 30 06:04:46 2026 +0000
+
+    update 09

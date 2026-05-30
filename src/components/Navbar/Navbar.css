@@ -22,7 +22,6 @@
 .mega-menu-trigger:hover .chevron,
 .mega-menu-trigger .chevron.open {
   transform: rotate(180deg);
-  color: var(--color-primary);
 }
 
 /* Mega Menu Panel (Slide & Fade Transition) */
