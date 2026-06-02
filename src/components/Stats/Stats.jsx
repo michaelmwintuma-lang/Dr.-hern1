@@ -42,8 +42,7 @@ const CountUp = ({ target, suffix = '', duration = 1500 }) => {
 const Stats = () => {
   return (
     <section className="stats-section bg-primary">
-      <img src="assets/img1.jpg" alt="Girls in Ghana" className="stats-bg" width="1200" height="400" loading="lazy"
-        onError={(e) => { e.target.style.display = 'none'; }} />
+      <img src="/images/stats_banner.jpg" alt="Girls in Ghana" className="stats-bg" width="1200" height="400" loading="lazy" />
       <div className="container stats-grid">
         <div className="stat-item">
           <CountUp target={500} suffix="+" />
@@ -58,7 +57,7 @@ const Stats = () => {
           <div className="stat-label">Partner Organizations</div>
         </div>
         <div className="stat-item">
-          <CountUp target={2020} />
+          <CountUp target={2024} />
           <div className="stat-label">Founded</div>
         </div>
       </div>

@@ -4,14 +4,18 @@ const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   
   const slides = [
-    'images/cover.jpeg',
-    'images/image01.avif',
-    'images/image02.webp',
-    'images/image03.jpg',
-    'images/image04.webp',
-    'images/image05.jpg',
-    'images/image06.jpg',
-    'images/image07.jpg'
+    '/images/img1.jpeg',
+    '/images/img2.jpeg',
+    '/images/img3.jpeg',
+    '/images/img4.jpeg',
+    '/images/cover.jpeg',
+    '/images/image01.avif',
+    '/images/image02.webp',
+    '/images/image03.jpg',
+    '/images/image04.webp',
+    '/images/image05.jpg',
+    '/images/image06.jpg',
+    '/images/image07.jpg'
   ];
 
   useEffect(() => {
@@ -30,8 +34,8 @@ const Hero = () => {
             className={`hero-slide ${index === currentSlide ? 'active' : ''}`} 
             style={{ 
               backgroundImage: `url('${slide}')`,
-              backgroundSize: index === 0 ? 'contain' : 'cover',
-              backgroundPosition: index === 0 ? 'center top' : 'center',
+              backgroundSize: slide.includes('cover.jpeg') ? 'contain' : 'cover',
+              backgroundPosition: slide.includes('cover.jpeg') ? 'center top' : 'center',
               backgroundRepeat: 'no-repeat'
             }}
           />

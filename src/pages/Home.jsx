@@ -83,7 +83,7 @@ const Home = () => {
                 e.currentTarget.style.transform = 'translateY(0)';
               }}
             >
-              <img src="/images/image03.jpg" alt="Our Mission" style={{ width: '100%', height: '200px', objectFit: 'cover', marginBottom: '1.5rem', borderRadius: '8px' }} />
+              <img src="/images/img1.jpeg" alt="Our Mission" style={{ width: '100%', height: '200px', objectFit: 'cover', marginBottom: '1.5rem', borderRadius: '8px' }} />
               <div style={{ width: '50px', height: '50px', backgroundColor: 'rgba(var(--color-primary-rgb), 0.1)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem', color: 'var(--color-primary)' }}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <circle cx="12" cy="12" r="1"></circle>
@@ -126,7 +126,7 @@ const Home = () => {
                 e.currentTarget.style.transform = 'translateY(0)';
               }}
             >
-              <img src="/images/image04.webp" alt="Our Vision" style={{ width: '100%', height: '200px', objectFit: 'cover', marginBottom: '1.5rem', borderRadius: '8px' }} />
+              <img src="/images/img2.jpeg" alt="Our Vision" style={{ width: '100%', height: '200px', objectFit: 'cover', marginBottom: '1.5rem', borderRadius: '8px' }} />
               <div style={{ width: '50px', height: '50px', backgroundColor: 'rgba(var(--color-primary-rgb), 0.1)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem', color: 'var(--color-primary)' }}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M7 3H5a2 2 0 0 0-2 2v2"></path>
@@ -328,7 +328,14 @@ const Home = () => {
                 e.currentTarget.style.boxShadow = 'none';
               }}
             >
-              <div style={{ color: 'var(--color-primary)', marginBottom: '1rem', fontSize: '2.5rem' }}></div>
+              <div style={{ color: 'var(--color-primary)', marginBottom: '1.5rem', display: 'flex', justifyContent: 'center' }}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
               <h3 style={{ color: 'var(--color-text)', marginBottom: '1rem', fontSize: '1.3rem', fontWeight: '700' }}>Become a Mentor</h3>
               <p style={{ color: 'var(--color-text-mid)', lineHeight: '1.6', marginBottom: '1.5rem' }}>
                 Share your expertise and experiences with the next generation of female leaders and make a lasting impact.
@@ -354,7 +361,12 @@ const Home = () => {
                 e.currentTarget.style.boxShadow = 'none';
               }}
             >
-              <div style={{ color: 'var(--color-primary)', marginBottom: '1rem', fontSize: '2.5rem' }}></div>
+              <div style={{ color: 'var(--color-primary)', marginBottom: '1.5rem', display: 'flex', justifyContent: 'center' }}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                </svg>
+              </div>
               <h3 style={{ color: 'var(--color-text)', marginBottom: '1rem', fontSize: '1.3rem', fontWeight: '700' }}>Corporate Partners</h3>
               <p style={{ color: 'var(--color-text-mid)', lineHeight: '1.6', marginBottom: '1.5rem' }}>
                 Partner with us to fund initiatives, provide internships, and create opportunities for growth.
@@ -380,7 +392,11 @@ const Home = () => {
                 e.currentTarget.style.boxShadow = 'none';
               }}
             >
-              <div style={{ color: 'var(--color-primary)', marginBottom: '1rem', fontSize: '2.5rem' }}></div>
+              <div style={{ color: 'var(--color-primary)', marginBottom: '1.5rem', display: 'flex', justifyContent: 'center' }}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+              </div>
               <h3 style={{ color: 'var(--color-text)', marginBottom: '1rem', fontSize: '1.3rem', fontWeight: '700' }}>Donate</h3>
               <p style={{ color: 'var(--color-text-mid)', lineHeight: '1.6', marginBottom: '1.5rem' }}>
                 Your contribution directly funds our programs and enables us to reach more girls across Africa.
